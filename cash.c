@@ -17,25 +17,33 @@ and returns the minimum number of coins to provide necessary change
 
 int main(void)
 {
+    float change;
+    do
+    {
+       printf("Please enter your change (as a positive float with no more that 2 decimal places):  ");
+       change = get_float();
+    } while (change <=0);
 
+
+    printf("%.2f", change);
 }
 
 /*
 Algorithm
 
-- prompt user for amount of change
+-[x] prompt user for amount of change
     - get_float
     - loop if not a positive float > 0
         - add (and only contains 2 decimal places) condition in later iteration of project?
-- convert input from float to int
+-[_] convert input from float to int
     - input *100 stored as an int rounded
-- While style
+-[_] While style
     - while (cointype can be used)
         increase count
         decrease change value by coin value
     - quarter, dime, nickle, penny
 
-- Modulo style
+-[_] Modulo style
     - int changeInt = int(user input*100)
     -
     - int coinvalue[4] = [25,10,5,1]
@@ -45,9 +53,9 @@ Algorithm
             {
                 coinnamecount = (change - (change % coinvalue))/coinvalue
                 coincount += coinnamecount
-                change =- coinvalue * coinnamecount
+                change =- coinvalue[i-1] * coinnamecount
             }
-        - else {}
+
 
 
 */
